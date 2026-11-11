@@ -16,13 +16,10 @@
 
 const MODEL = process.env.AI_MODEL || 'gemini-3.5-flash-lite';
 const GEMINI_URL = process.env.GEMINI_URL || 'https://generativelanguage.googleapis.com/v1beta/models';
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-export async function askAI(prompt) {
-  const key = process.env.GEMINI_API_KEY;
-  if (!key) {
-    throw new Error('The GEMINI_API_KEY secret is missing, so the judges cannot think. See the README.');
-  }
-
+// Asks once. Returns the answer, or says the AI was too busy to answer.
+async function askOnce(prompt, key) {
   const res = await fetch(`${GEMINI_URL}/${MODEL}:generateContent`, {
     method: 'POST',
     headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
@@ -33,12 +30,13 @@ export async function askAI(prompt) {
     // Thirty seconds is plenty for a short answer.
     signal: AbortSignal.timeout(30000),
   });
-  // A free key only allows a few questions a minute, and every press of the
-  // button asks each judge once. Too many presses close together get this
-  // error. It is not broken, it just needs a short rest.
-  if (res.status === 429) {
-    console.error((await res.text()).slice(0, 1500)); // full detail for whoever runs the server
-    throw new Error('The AI is getting too many questions right now. Wait a minute, then try again.');
+
+  // 429 means our key has asked too many questions this minute.
+  // 500 and 503 mean the AI company's computers are overloaded. That
+  // happens to everyone sometimes, and it usually passes in seconds.
+  if (res.status === 429 || res.status === 500 || res.status === 503) {
+    console.error(`The AI was busy (error ${res.status}): ${(await res.text()).slice(0, 300)}`);
+    return { busy: true };
   }
   if (!res.ok) {
     throw new Error(`The AI answered with error ${res.status}: ${(await res.text()).slice(0, 200)}`);
@@ -47,5 +45,25 @@ export async function askAI(prompt) {
   const data = await res.json();
   const text = (data.candidates?.[0]?.content?.parts || []).map((p) => p.text || '').join('');
   if (!text.trim()) throw new Error('The AI sent back an empty answer.');
-  return text;
+  return { text };
+}
+
+export async function askAI(prompt) {
+  const key = process.env.GEMINI_API_KEY;
+  if (!key) {
+    throw new Error('The GEMINI_API_KEY secret is missing, so the judges cannot think. See the README.');
+  }
+
+  // A busy AI often frees up a moment later, so try three times, waiting
+  // a little longer each time, before giving up.
+  const waits = [0, 3000, 8000];
+  for (const wait of waits) {
+    if (wait) await sleep(wait);
+    const answer = await askOnce(prompt, key);
+    if (!answer.busy) return answer.text;
+  }
+
+  const err = new Error('The AI is very busy right now. Wait a minute, then try again.');
+  err.busy = true; // lets other code tell "busy" apart from "broken"
+  throw err;
 }
