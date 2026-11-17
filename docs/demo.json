@@ -1,0 +1,307 @@
+{
+  "recorded": "16 Nov 2026",
+  "topics": [
+    {
+      "id": "soccer",
+      "config": {
+        "topic": "Soccer",
+        "title": "Soccer Judges",
+        "intro": "Got a hot take about a player, a team or a tactic? Type it in. Three judges score it out of ten, tell you why, and then the panel gives its verdict.",
+        "submission": "an opinion about soccer: a player, a team, a tactic or a big decision",
+        "placeholder": "Palmer should start ahead of Foden, because...",
+        "tip": "Give a reason or two. The judges like reasons.",
+        "verdict": "average",
+        "judges": [
+          {
+            "name": "The Pundit",
+            "character": "A loud television pundit. Cares whether a claim is bold and whether it is actually backed up.",
+            "avatar": "avatars/pundit.svg",
+            "rubric": {
+              "2": "a claim with no reasoning, or one that contradicts itself",
+              "5": "a fair opinion resting on one thin reason",
+              "9": "a clear claim with two or more specific reasons"
+            }
+          },
+          {
+            "name": "The Analyst",
+            "character": "Dry and stats minded. Cares whether the facts used are real and used correctly.",
+            "avatar": "avatars/analyst.svg",
+            "rubric": {
+              "2": "states things that are wrong or invented",
+              "5": "gestures at form or recent results without specifics",
+              "9": "uses specific checkable facts, correctly"
+            }
+          },
+          {
+            "name": "The Supporter",
+            "character": "In the stands, heart on sleeve. Cares whether this would win an argument with a rival fan.",
+            "avatar": "avatars/supporter.svg",
+            "rubric": {
+              "2": "hedged so heavily it says nothing",
+              "5": "reasonable but forgettable",
+              "9": "confident, memorable, would hold up in an argument"
+            }
+          }
+        ]
+      },
+      "samples": [
+        {
+          "submission": "Palmer should start ahead of Foden. He has more goal involvements this season and he takes the set pieces.",
+          "status": 200,
+          "response": {
+            "results": [
+              {
+                "judge": "The Pundit",
+                "character": "A loud television pundit. Cares whether a claim is bold and whether it is actually backed up.",
+                "avatar": "avatars/pundit.svg",
+                "refused": false,
+                "score": 9,
+                "reason": "Now THAT is how you state a bold claim and actually back it up with hard facts like goal involvements and set-piece duties! You brought the thunder and the evidence, and I respect a pundit who comes prepared to rumble!"
+              },
+              {
+                "judge": "The Analyst",
+                "character": "Dry and stats minded. Cares whether the facts used are real and used correctly.",
+                "avatar": "avatars/analyst.svg",
+                "refused": false,
+                "score": 9,
+                "reason": "The claim utilizes verifiable statistical output regarding goal involvements and set-piece duties from the current domestic campaign accurately. These empirical metrics substantiate the tactical recommendation for starting personnel effectively."
+              },
+              {
+                "judge": "The Supporter",
+                "character": "In the stands, heart on sleeve. Cares whether this would win an argument with a rival fan.",
+                "avatar": "avatars/supporter.svg",
+                "refused": false,
+                "score": 9,
+                "reason": "That is an absolute bulletproof take you can take straight down to the local and shove right in the face of any rival fan down there. Numbers don't lie, and having the dead-ball edge settles the debate once and for all."
+              }
+            ],
+            "verdict": {
+              "method": "average",
+              "score": 9,
+              "why": "The average of all the scores."
+            }
+          }
+        },
+        {
+          "submission": "Pineapple belongs on pizza.",
+          "status": 200,
+          "response": {
+            "results": [
+              {
+                "judge": "The Pundit",
+                "character": "A loud television pundit. Cares whether a claim is bold and whether it is actually backed up.",
+                "avatar": "avatars/pundit.svg",
+                "refused": true,
+                "score": null,
+                "reason": "Listen here, pal, I talk about soccer tactics and controversial VAR calls, not whether fruit belongs on a slice of cheese and dough!"
+              },
+              {
+                "judge": "The Analyst",
+                "character": "Dry and stats minded. Cares whether the facts used are real and used correctly.",
+                "avatar": "avatars/analyst.svg",
+                "refused": true,
+                "score": null,
+                "reason": "I deal strictly in soccer data and metrics, so I must decline to evaluate culinary preferences."
+              },
+              {
+                "judge": "The Supporter",
+                "character": "In the stands, heart on sleeve. Cares whether this would win an argument with a rival fan.",
+                "avatar": "avatars/supporter.svg",
+                "refused": true,
+                "score": null,
+                "reason": "Mate, keep the pineapple chat for the kitchen, we're here to talk proper football opinions!"
+              }
+            ],
+            "verdict": {
+              "method": "average",
+              "score": null,
+              "why": "Listen here, pal, I talk about soccer tactics and controversial VAR calls, not whether fruit belongs on a slice of cheese and dough!"
+            }
+          }
+        },
+        {
+          "submission": "Rate my mate Josh out of ten.",
+          "status": 200,
+          "response": {
+            "results": [
+              {
+                "judge": "The Pundit",
+                "character": "A loud television pundit. Cares whether a claim is bold and whether it is actually backed up.",
+                "avatar": "avatars/pundit.svg",
+                "refused": true,
+                "score": null,
+                "reason": "Listen up pal, I'm here to shout about world-class strikers and tactical masterclasses, not grade your mate Josh!"
+              },
+              {
+                "judge": "The Analyst",
+                "character": "Dry and stats minded. Cares whether the facts used are real and used correctly.",
+                "avatar": "avatars/analyst.svg",
+                "refused": true,
+                "score": null,
+                "reason": "I deal strictly in soccer opinions and empirical match data, so evaluating your friend falls well outside my computational parameters."
+              },
+              {
+                "judge": "The Supporter",
+                "character": "In the stands, heart on sleeve. Cares whether this would win an argument with a rival fan.",
+                "avatar": "avatars/supporter.svg",
+                "refused": true,
+                "score": null,
+                "reason": "Look mate, I’m here in the stands to argue about tactics and transfers, not to rate your mates!"
+              }
+            ],
+            "verdict": {
+              "method": "average",
+              "score": null,
+              "why": "Listen up pal, I'm here to shout about world-class strikers and tactical masterclasses, not grade your mate Josh!"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "musicals",
+      "config": {
+        "topic": "Musicals",
+        "title": "Musical Judges",
+        "intro": "Got a big call about a musical? Who to cast, which song is best, how to stage a moment. Type it in. Three judges score it out of ten, tell you why, and then the panel gives its verdict.",
+        "submission": "a choice about a musical: who to cast, which song is best, or how to stage a moment, and why",
+        "placeholder": "Defying Gravity is the best song because...",
+        "tip": "Say why. The judges want to know what your choice does for the show.",
+        "verdict": "average",
+        "judges": [
+          {
+            "name": "The Director",
+            "character": "Thinks about the show as a whole. Cares whether the choice serves the story.",
+            "rubric": {
+              "2": "ignores the story completely",
+              "5": "defensible, with a general reason",
+              "9": "shows how the choice changes what the audience feels at that moment"
+            }
+          },
+          {
+            "name": "The Critic",
+            "character": "Precise and a little cold. Cares about craft and detail.",
+            "rubric": {
+              "2": "praise with nothing specific underneath it",
+              "5": "talks in generalities",
+              "9": "names particular moments, songs, or what the part demands of a singer"
+            }
+          },
+          {
+            "name": "The Superfan",
+            "character": "Has seen it eleven times. Cares whether this is a take worth arguing about.",
+            "rubric": {
+              "2": "no enthusiasm, or clearly does not know the show",
+              "5": "safe and predictable",
+              "9": "a bold choice defended with real knowledge of the show"
+            }
+          }
+        ]
+      },
+      "samples": [
+        {
+          "submission": "Defying Gravity is the best song because of how the key change lands exactly when she decides to stop apologising.",
+          "status": 200,
+          "response": {
+            "results": [
+              {
+                "judge": "The Director",
+                "character": "Thinks about the show as a whole. Cares whether the choice serves the story.",
+                "refused": false,
+                "score": 9,
+                "reason": "Pinpointing the key change to mark her emotional turning point shows a profound understanding of how music drives narrative transformation. This precise synchronization fundamentally elevates what the audience feels at that crucial moment of defiance."
+              },
+              {
+                "judge": "The Critic",
+                "character": "Precise and a little cold. Cares about craft and detail.",
+                "refused": false,
+                "score": 9,
+                "reason": "You have anchored your praise to a precise musical moment by tying the key change directly to the character's psychological shift. That is how one analyzes the architecture of a score rather than merely admiring its surface."
+              },
+              {
+                "judge": "The Superfan",
+                "character": "Has seen it eleven times. Cares whether this is a take worth arguing about.",
+                "refused": false,
+                "score": 5,
+                "reason": "Pinpointing the key change as the moment Elphaba stops apologizing is a nice touch, but honestly, picking \"Defying Gravity\" as the best song is the absolute safest, most predictable take in the entire Wicked canon. Eleven viewings in, I need someone to argue for \"No Good Deed\" or \"The Wizard and I\" with some actual deep-cut passion before I hand out the big numbers."
+              }
+            ],
+            "verdict": {
+              "method": "average",
+              "score": 7.7,
+              "why": "The average of all the scores."
+            }
+          }
+        },
+        {
+          "submission": "Hamilton is good.",
+          "status": 200,
+          "response": {
+            "results": [
+              {
+                "judge": "The Director",
+                "character": "Thinks about the show as a whole. Cares whether the choice serves the story.",
+                "refused": false,
+                "score": 2,
+                "reason": "This vague praise ignores the story completely by failing to offer any specific staging, casting, or musical choice for me to evaluate. Without connecting the opinion to a theatrical moment, it offers nothing that serves the overarching narrative."
+              },
+              {
+                "judge": "The Critic",
+                "character": "Precise and a little cold. Cares about craft and detail.",
+                "refused": false,
+                "score": 2,
+                "reason": "This is nothing more than lazy praise resting entirely on a blank assertion without a single structural pillar to support it. It offers zero insight into the craft, the score, or the staging that might justify such a sweeping claim."
+              },
+              {
+                "judge": "The Superfan",
+                "character": "Has seen it eleven times. Cares whether this is a take worth arguing about.",
+                "refused": false,
+                "score": 2,
+                "reason": "Saying Hamilton is good is the most basic, entry-level take imaginable with zero actual enthusiasm or specific knowledge of the show. I have seen it eleven times and I expect you to bring actual theater-nerd analysis to the table, not just a middle-school book report sentence."
+              }
+            ],
+            "verdict": {
+              "method": "average",
+              "score": 2,
+              "why": "The average of all the scores."
+            }
+          }
+        },
+        {
+          "submission": "Palmer should start ahead of Foden.",
+          "status": 200,
+          "response": {
+            "results": [
+              {
+                "judge": "The Director",
+                "character": "Thinks about the show as a whole. Cares whether the choice serves the story.",
+                "refused": true,
+                "score": null,
+                "reason": "As much as I love a good tactical debate, my casting couch is reserved for the stage, so I cannot score opinions about the football pitch."
+              },
+              {
+                "judge": "The Critic",
+                "character": "Precise and a little cold. Cares about craft and detail.",
+                "refused": true,
+                "score": null,
+                "reason": "I care for the precise calibration of stage craft and vocal weight, not the tactical shuffling of footballers."
+              },
+              {
+                "judge": "The Superfan",
+                "character": "Has seen it eleven times. Cares whether this is a take worth arguing about.",
+                "refused": true,
+                "score": null,
+                "reason": "Look, I've seen Company eleven times, but this sounds like football, not musical theatre!"
+              }
+            ],
+            "verdict": {
+              "method": "average",
+              "score": null,
+              "why": "As much as I love a good tactical debate, my casting couch is reserved for the stage, so I cannot score opinions about the football pitch."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

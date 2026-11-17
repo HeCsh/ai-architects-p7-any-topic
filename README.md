@@ -1,5 +1,7 @@
 # AI Architects · Project 7: Any topic (checkpoint)
 
+**See it working:** [https://hecsh.github.io/ai-architects-p7-any-topic/](https://hecsh.github.io/ai-architects-p7-any-topic/). This example site replays real answers recorded from the judges, so you can try the examples without a key. It lives in the `docs` folder; you do not need to change it.
+
 Finished state of Projects 5 to 7. Three things are working here:
 
 - **A panel of three judges and a verdict**, from Project 6. Each judge scores out of ten and says why in two sentences. The verdict combines them.
